@@ -315,6 +315,7 @@ static NSMutableDictionary* highlightThemes;
                     [UIColor colorWithRed:79.0/255 green:108.0/255 blue:132.0/255 alpha:1],kRegexHighlightViewTypeAttribute,
                     [UIColor colorWithRed:0.0/255 green:249.0/255 blue:161.0/255 alpha:1],kRegexHighlightViewTypeProject,
                     [UIColor colorWithRed:0.0/255 green:179.0/255 blue:248.0/255 alpha:1],kRegexHighlightViewTypeOther,nil];
+            break;
         case kRegexHighlightViewThemePresentation:
             themeColor = [NSDictionary dictionaryWithObjectsAndKeys:
                     [UIColor colorWithRed:0.0/255 green:0.0/255 blue:0.0/255 alpha:1],kRegexHighlightViewTypeText,
