@@ -16,7 +16,17 @@ The class uses the `CoreText` framework and `NSAttributedString` to highlight th
 
 The highlighting themes and colors can be easily changed and adapted. Define your own highlighting by defining own regular expressions. Anyways the project comes bundled with predefined highlight definitions for the following programming languages:
 
-	actionscript, actionscript3, active4d, ada, ampl, apache, applescript, asm-mips, asm-x86, asp-js, asp-vb, aspdotnet-cs, aspdotnet-vb, awk, batch, c, cobol, coldfusion, cpp, csharp, csound, css, d, dylan, eiffel, erl, eztpl, fortran, freefem, gedcom, gnuassembler, haskell, header, html, idl, java, javafx, javascript, jsp, latex, lilypond, lisp, logtalk, lsl, lua, matlab, mel, metapost, metaslang, mysql, nemerle, none, nrnhoc, objectivec, objectivecaml, ox, pascal, pdf, perl, php, plist, postscript, prolog, python, r, rhtml, ruby, scala, sgml, shell, sml, sql, standard, stata, supercollider, tcltk, torquescript, udo, vb, verilog, vhdl, xml
+	actionscript, actionscript3, active4d, ada, ampl, apache,
+	applescript, asm-mips, asm-x86, asp-js, asp-vb, aspdotnet-cs,
+	aspdotnet-vb, awk, batch, c, cobol, coldfusion, cpp, csharp,
+	csound, css, d, dylan, eiffel, erl, eztpl, fortran, freefem,
+	gedcom, gnuassembler, haskell, header, html, idl, java, javafx,
+	javascript, jsp, latex, lilypond, lisp, logtalk, lsl, lua, 
+	matlab, mel, metapost, metaslang, mysql, nemerle, none, nrnhoc,
+	objectivec, objectivecaml, ox, pascal, pdf, perl, php, plist,
+	postscript, prolog, python, r, rhtml, ruby, scala, sgml, shell,
+	sml, sql, standard, stata, supercollider, tcltk, torquescript,
+	udo, vb, verilog, vhdl, xml
 
 Please give support so I can continue to make RegexHighlightView even more awesome!
 
@@ -64,7 +74,6 @@ The best way to use RegexHighlightView with Xcode 4.2 is to add the source files
 5. Go to File: Project Settings… and change the derived data location to project-relative.
 6. Add the DerivedData folder to your git ignore. 
 7. In your application's target Build Settings:
-
 	- If your app does not use ARC yet (but RegexHighlightView does) then you need to add the the -fobjc-arc linker flag to the app target's "Other Linker Flags".
 
 If you do not want to deal with Git submodules simply add RegexHighlightView to your project's git ignore file and pull updates to RegexHighlightView as its own independent Git repository. Otherwise you are free to add RegexHighlightView as a submodule.
