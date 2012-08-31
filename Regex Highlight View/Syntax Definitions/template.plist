@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>keyword</key>
+	<string>(?&lt;!\w)(and|or|xor|for|do|while|foreach|as|return|die|exit|if|then|else|elseif|new|delete|try|throw|catch|finally|class|function|string|array|object|resource|var|bool|boolean|int|integer|float|double|real|string|array|global|const|static|public|private|protected|published|extends|switch|true|false|null|void|this|self|struct|char|signed|unsigned|short|long|print)(?!\w)</string>
+	<key>url</key>
+	<string>((https?://)?([\da-z\\.-]+)\.([a-z\.]{2,6})([/\w \.-]*)*/?)</string>
+	<key>project</key>
+	<string>((NS|UI|CG)[^ ]+?)</string>
+	<key>attribute</key>
+	<string>(\.[^ ]+?)</string>
+	<key>number</key>
+	<string>(\d)</string>
+	<key>character</key>
+	<string>(&apos;.&apos;)</string>
+	<key>string</key>
+	<string>(@?&quot;.*?&quot;)</string>
+	<key>comment</key>
+	<string>(//.*?)\n</string>
+	<key>documentation_comment_keyword</key>
+	<string>(/\*|\*/)</string>
+	<key>documentation_comment</key>
+	<string>/\*(.*?)\*/</string>
+	<key>preprocessor</key>
+	<string>(#.*?)\n</string>
+	<key>other</key>
+	<string>(Kristian|Kraljic)</string>
+</dict>
+</plist>

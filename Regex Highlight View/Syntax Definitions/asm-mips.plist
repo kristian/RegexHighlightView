@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>comment</key>
+	<string>(#.*?)
+</string>
+	<key>documentation_comment</key>
+	<string>\*\/(.*?)\/\*</string>
+	<key>documentation_comment_keyword</key>
+	<string>(\*\/|\/\*)</string>
+	<key>keyword</key>
+	<string>(?&lt;!\w)(ABS|ADD|ADDI|ADDIU|ADDU|DIV|DIVU|MULOU|MULO|MULT|MULTU|NEG|NOP|REMU|REM|SEQ|SGEU|SGE|SGTU|SGT|SLEU|SLE|SLT|SLTI|SLTIU|SLTU|SNE|SUB|SUBU|AND|ANDI|NOR|NOT|OR|ORI|XOR|XORI|ROL|ROR|SLL|SLLV|SRA|SRAV|SRL|SRLV|LB|LBU|LD|LH|LHU|LW|SB|SD|SH|SW|LA|LI|LUI|MFHI|MFLO|MOVE|MTHI|MTLO|B|BEQ|BEQZ|BGE|BGEU|BGEZ|BGEZAL|BGT|BGTU|BGTZ|BLE|BLEU|BLEZ|BLT|BLTU|BLTZ|BLTZAL|BNE|BNEZ|J|JAL|JALR|JR|MFC0|MTC0|BREAK|SYSCALL)(?!\w)</string>
+	<key>number</key>
+	<string>(\d)</string>
+	<key>string</key>
+	<string>(".*?")</string>
+	<key>url</key>
+	<string>((https?://)?([\da-z\.-]+)\.([a-z\.]{2,6})([/\w \.-]*)*/?)</string>
+</dict>
+</plist>

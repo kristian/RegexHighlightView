@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>comment</key>
+	<string>(\/\/.*?)
+</string>
+	<key>documentation_comment</key>
+	<string>\/\*(.*?)\*\/</string>
+	<key>documentation_comment_keyword</key>
+	<string>(\/\*|\*\/)</string>
+	<key>keyword</key>
+	<string>(?&lt;!\w)(taglib|include|page|tag|tagAttribute|tagVariable|language|session|contentType|charset|import|buffer|autoflush|isThreadSafe|info|errorPage|isErrorpage|extends|file|uri|prefix|method|name|default|required|rtexprvalue|id|type|scope|abstract|break|case|catch|continue|default|do|else|extends|final|finally|for|if|implements|instanceof|native|new|private|protected|public|return|static|switch|synchronized|throw|throws|transient|try|volatile|while|package|import|boolean|byte|char|class|double|float|int|interface|long|short|void|assert|strictfp|false|null|super|this|true|goto|const|enum)(?!\w)</string>
+	<key>number</key>
+	<string>(\d)</string>
+	<key>string</key>
+	<string>(".*?")</string>
+	<key>url</key>
+	<string>((https?://)?([\da-z\.-]+)\.([a-z\.]{2,6})([/\w \.-]*)*/?)</string>
+</dict>
+</plist>

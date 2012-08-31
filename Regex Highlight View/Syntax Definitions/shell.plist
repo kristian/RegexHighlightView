@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>comment</key>
+	<string>(#.*?)
+</string>
+	<key>keyword</key>
+	<string>(?&lt;!\w)(if|then|elif|else|fi|case|in|;;|esac|while|for|do|done|continue|local|return)(?!\w)</string>
+	<key>number</key>
+	<string>(\d)</string>
+	<key>string</key>
+	<string>(".*?")</string>
+	<key>url</key>
+	<string>((https?://)?([\da-z\.-]+)\.([a-z\.]{2,6})([/\w \.-]*)*/?)</string>
+</dict>
+</plist>
