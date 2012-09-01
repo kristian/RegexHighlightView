@@ -5,7 +5,7 @@
 	<key>number</key>
 	<string>(\d)</string>
 	<key>string</key>
-	<string>(".*?")</string>
+	<string>("(?:[^"\\]|\\.)*")</string>
 	<key>url</key>
 	<string>((https?://)?([\da-z\.-]+)\.([a-z\.]{2,6})([/\w \.-]*)*/?)</string>
 </dict>

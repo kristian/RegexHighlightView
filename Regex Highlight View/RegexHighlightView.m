@@ -383,7 +383,7 @@ static NSMutableDictionary* highlightThemes;
     [definition setObject:@"(\\.\\w+)" forKey:kRegexHighlightViewTypeAttribute];    
     [definition setObject:@"(\\d)" forKey:kRegexHighlightViewTypeNumber];
     [definition setObject:@"('.')" forKey:kRegexHighlightViewTypeCharacter];
-    [definition setObject:@"(@?\".*?\")" forKey:kRegexHighlightViewTypeString];
+    [definition setObject:@"(@?\"(?:[^\"\\\\]|\\\\.)*\")" forKey:kRegexHighlightViewTypeString];
     [definition setObject:@"(//.*?)\n" forKey:kRegexHighlightViewTypeComment];
     [definition setObject:@"(/\\*|\\*/)" forKey:kRegexHighlightViewTypeDocumentationCommentKeyword];
     [definition setObject:@"/\\*(.*?)\\*/" forKey:kRegexHighlightViewTypeDocumentationComment];

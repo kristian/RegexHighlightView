@@ -15,7 +15,7 @@
 	<key>character</key>
 	<string>(&apos;.&apos;)</string>
 	<key>string</key>
-	<string>(@?&quot;.*?&quot;)</string>
+	<string>(@?&quot;(?:[^&quot;\\]|\\.)*&quot;)</string>
 	<key>comment</key>
 	<string>(//.*?)\n</string>
 	<key>documentation_comment_keyword</key>
