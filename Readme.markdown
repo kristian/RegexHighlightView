@@ -1,7 +1,7 @@
 RegexHighlightView
 ==================
 
-This project is a simple (*syntax*) highlighting `UITextView` for Cocoa and iOS. I wanted to create a simple, easy to use and extendable highlighter entirely based on regular expressions (*regex*, *regexp*). Existing project aimed to cover a specific highlighting or purpose. I wanted to create a versatile class to be used for any purpose. 
+This project is a simple (*syntax*) highlighting `UITextView` for Cocoa and iOS. I wanted to create a simple, easy to use and extendable highlighter entirely based on regular expressions (*regex*, *regexp*). Existing projects aimed to cover a specific highlighting or purpose. I wanted to create a versatile class to be used for any purpose. 
 
 The class uses the `CoreText` framework and `NSAttributedString` to highlight the text based on defined regular expressions. Expressions as well as colors can be defined using `NSDictionary` or *plist* files. Build-in highlighting **Themes** allow to beautifully highlight text out of the box. All XCode themes are supported:
 
