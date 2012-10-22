@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1296</int>
-		<string key="IBDocument.SystemVersion">11E53</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2182</string>
-		<string key="IBDocument.AppKitVersion">1138.47</string>
+		<int key="IBDocument.SystemTarget">1536</int>
+		<string key="IBDocument.SystemVersion">11G56</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2840</string>
+		<string key="IBDocument.AppKitVersion">1138.51</string>
 		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1181</string>
+			<string key="NS.object.0">1926</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
-			<string>IBUIView</string>
 			<string>IBUITextView</string>
+			<string>IBUIView</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -52,8 +52,8 @@
 						<bool key="IBUIShowsHorizontalScrollIndicator">NO</bool>
 						<string type="base64-UTF8" key="IBUIText">LyoKICBUaGlzIGlzIGEgc3ludGF4IGhpZ2hsaWdodGluZyBleGFtcGxlIGZvciB0aGUKICBSZWdleEhp
 Z2hsaWdodGVyVmlldyBkZXZlbG9wZWQgYnkgS3Jpc3RpYW4gS3JhbGppYwoqLwoKI2RlZmluZSBXT1JM
-RCAiV29ybGQiCmRvIHsKCS8vUHJpbnQgSGVsbG8gV29ybGQKCXByaW50KCJIZWxsbyIpCglwcmludChX
-T1JMRCkKfSB3aGlsZSgxKQ</string>
+RCAiV29ybGQiCmRvIHsKCS8vUHJpbnQgSGVsbG8gV29ybGQKCXByaW50KCJIZWxsbyIpCglwcmludCgi
+aHR0cDovL2V4YW1wbGUub3JnLyIpCglwcmludChXT1JMRC5sZW5ndGgpCn0gd2hpbGUoMSk</string>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<int key="IBUIAutocorrectionType">1</int>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -189,10 +189,10 @@ T1JMRCkKfSB3aGlsZSgxKQ</string>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBIPadFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
-			<real value="1296" key="NS.object.0"/>
+			<real value="1536" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<string key="IBCocoaTouchPluginVersion">1181</string>
+		<string key="IBCocoaTouchPluginVersion">1926</string>
 	</data>
 </archive>

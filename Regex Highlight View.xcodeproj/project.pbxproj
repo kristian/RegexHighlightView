@@ -18,7 +18,6 @@
 		F790109E15F014D300C297D7 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F790109C15F014D300C297D7 /* ViewController_iPad.xib */; };
 		F79010F915F015A600C297D7 /* RegexHighlightView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79010A515F015A500C297D7 /* RegexHighlightView.m */; };
 		F790114E15F016AE00C297D7 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F790114D15F016AE00C297D7 /* CoreText.framework */; };
-		F790115615F0406700C297D7 /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F790115015F032C200C297D7 /* OrderedDictionary.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F790115815F047EE00C297D7 /* template.plist in Resources */ = {isa = PBXBuildFile; fileRef = F790115715F047ED00C297D7 /* template.plist */; };
 		F790121B15F0C06800C297D7 /* actionscript.plist in Resources */ = {isa = PBXBuildFile; fileRef = F79011C815F0C06800C297D7 /* actionscript.plist */; };
 		F790121C15F0C06800C297D7 /* actionscript3.plist in Resources */ = {isa = PBXBuildFile; fileRef = F79011C915F0C06800C297D7 /* actionscript3.plist */; };
@@ -102,6 +101,7 @@
 		F790126B15F0C06800C297D7 /* verilog.plist in Resources */ = {isa = PBXBuildFile; fileRef = F790121815F0C06800C297D7 /* verilog.plist */; };
 		F790126C15F0C06800C297D7 /* vhdl.plist in Resources */ = {isa = PBXBuildFile; fileRef = F790121915F0C06800C297D7 /* vhdl.plist */; };
 		F790126D15F0C06800C297D7 /* xml.plist in Resources */ = {isa = PBXBuildFile; fileRef = F790121A15F0C06800C297D7 /* xml.plist */; };
+		F7EB63DA163584BF0050B8DC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7EB63D9163584BF0050B8DC /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,8 +122,6 @@
 		F79010A415F015A500C297D7 /* RegexHighlightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexHighlightView.h; sourceTree = "<group>"; };
 		F79010A515F015A500C297D7 /* RegexHighlightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexHighlightView.m; sourceTree = "<group>"; };
 		F790114D15F016AE00C297D7 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		F790114F15F032C200C297D7 /* OrderedDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
-		F790115015F032C200C297D7 /* OrderedDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
 		F790115715F047ED00C297D7 /* template.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = template.plist; sourceTree = "<group>"; };
 		F79011C815F0C06800C297D7 /* actionscript.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = actionscript.plist; sourceTree = "<group>"; };
 		F79011C915F0C06800C297D7 /* actionscript3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = actionscript3.plist; sourceTree = "<group>"; };
@@ -207,6 +205,7 @@
 		F790121815F0C06800C297D7 /* verilog.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = verilog.plist; sourceTree = "<group>"; };
 		F790121915F0C06800C297D7 /* vhdl.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = vhdl.plist; sourceTree = "<group>"; };
 		F790121A15F0C06800C297D7 /* xml.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xml.plist; sourceTree = "<group>"; };
+		F7EB63D9163584BF0050B8DC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,7 +270,7 @@
 		F790108B15F014D200C297D7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F790115115F032CA00C297D7 /* Ordered Dictionary */,
+				F7EB63D9163584BF0050B8DC /* Default-568h@2x.png */,
 				F790108C15F014D200C297D7 /* Regex Highlight View-Info.plist */,
 				F790108D15F014D200C297D7 /* InfoPlist.strings */,
 				F790109015F014D200C297D7 /* main.m */,
@@ -378,15 +377,6 @@
 				F79010A615F015A500C297D7 /* Syntax Definitions */,
 			);
 			name = "Regex Highlight View";
-			sourceTree = "<group>";
-		};
-		F790115115F032CA00C297D7 /* Ordered Dictionary */ = {
-			isa = PBXGroup;
-			children = (
-				F790114F15F032C200C297D7 /* OrderedDictionary.h */,
-				F790115015F032C200C297D7 /* OrderedDictionary.m */,
-			);
-			name = "Ordered Dictionary";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -525,6 +515,7 @@
 				F790126B15F0C06800C297D7 /* verilog.plist in Resources */,
 				F790126C15F0C06800C297D7 /* vhdl.plist in Resources */,
 				F790126D15F0C06800C297D7 /* xml.plist in Resources */,
+				F7EB63DA163584BF0050B8DC /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +530,6 @@
 				F790109515F014D300C297D7 /* AppDelegate.m in Sources */,
 				F790109815F014D300C297D7 /* ViewController.m in Sources */,
 				F79010F915F015A600C297D7 /* RegexHighlightView.m in Sources */,
-				F790115615F0406700C297D7 /* OrderedDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

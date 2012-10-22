@@ -5,25 +5,25 @@
 	<key>keyword</key>
 	<string>(?&lt;!\w)(and|or|xor|for|do|while|foreach|as|return|die|exit|if|then|else|elseif|new|delete|try|throw|catch|finally|class|function|string|array|object|resource|var|bool|boolean|int|integer|float|double|real|string|array|global|const|static|public|private|protected|published|extends|switch|true|false|null|void|this|self|struct|char|signed|unsigned|short|long|print)(?!\w)</string>
 	<key>url</key>
-	<string>((https?://)?([\da-z\\.-]+)\.([a-z\.]{2,6})([/\w \.-]*)*/?)</string>
+	<string>((https?|mailto|ftp|file)://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)</string>
 	<key>project</key>
-	<string>((NS|UI|CG)[^ ]+?)</string>
+	<string>\b((NS|UI|CG)\w+?)</string>
 	<key>attribute</key>
-	<string>(\.[^ ]+?)</string>
+	<string>(\.[^\d]\w+)</string>
 	<key>number</key>
-	<string>(\d)</string>
+	<string>(?&lt;!\w)(((0x[0-9a-fA-F]+)|(([0-9]+\.?[0-9]*|\.[0-9]+)([eE][-+]?[0-9]+)?))[fFlLuU]{0,2})(?!\w)</string>
 	<key>character</key>
 	<string>(&apos;.&apos;)</string>
 	<key>string</key>
 	<string>(@?&quot;(?:[^&quot;\\]|\\.)*&quot;)</string>
 	<key>comment</key>
-	<string>(//.*?)\n</string>
+	<string>//[^&quot;\n\r]*(?:&quot;[^&quot;\n\r]*&quot;[^&quot;\n\r]*)*[\r\n]</string>
 	<key>documentation_comment_keyword</key>
 	<string>(/\*|\*/)</string>
 	<key>documentation_comment</key>
 	<string>/\*(.*?)\*/</string>
 	<key>preprocessor</key>
-	<string>(#.*?)\n</string>
+	<string>(#.*?)[\r\n]</string>
 	<key>other</key>
 	<string>(Kristian|Kraljic)</string>
 </dict>

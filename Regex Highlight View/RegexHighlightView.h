@@ -60,10 +60,10 @@ typedef enum {
 @property(nonatomic) NSDictionary *highlightColor;
 @property(nonatomic) NSDictionary *highlightDefinition;
 
-- (void) setHighlightDefinition:(NSDictionary*)highlightDefinition;
-- (void) setHighlightDefinitionWithContentsOfFile:(NSString*)path;
+-(void)setHighlightDefinition:(NSDictionary*)highlightDefinition;
+-(void)setHighlightDefinitionWithContentsOfFile:(NSString*)path;
 
-- (void) setHighlightTheme:(RegexHighlightViewTheme)theme;
-+ (NSDictionary*) highlightTheme:(RegexHighlightViewTheme)theme;
+-(void)setHighlightTheme:(RegexHighlightViewTheme)theme;
++(NSDictionary*)highlightTheme:(RegexHighlightViewTheme)theme;
 
 @end

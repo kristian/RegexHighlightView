@@ -28,7 +28,6 @@
 //
 
 #import "RegexHighlightView.h"
-#import "OrderedDictionary.h"
 
 #define EMPTY @""
 
@@ -83,30 +82,30 @@ static NSMutableDictionary* highlightThemes;
 @synthesize highlightColor;
 @synthesize highlightDefinition;
 
-- (void)setHighlightColor:(NSDictionary*)newHighlightColor {
+-(void)setHighlightColor:(NSDictionary*)newHighlightColor {
     if(highlightColor!=newHighlightColor) {
         highlightColor = newHighlightColor;
         [self setNeedsLayout];
     }
 }
-- (void)setHighlightDefinition:(NSDictionary*)newHighlightDefinition {
+-(void)setHighlightDefinition:(NSDictionary*)newHighlightDefinition {
     if(highlightDefinition!=newHighlightDefinition) {
         highlightDefinition = newHighlightDefinition;
         [self setNeedsLayout];
     }
 }
-- (void)setHighlightDefinitionWithContentsOfFile:(NSString*)newPath {
-    [self setHighlightDefinition:[OrderedDictionary dictionaryWithContentsOfFile:newPath]];
+-(void)setHighlightDefinitionWithContentsOfFile:(NSString*)newPath {
+    [self setHighlightDefinition:[NSDictionary dictionaryWithContentsOfFile:newPath]];
 }
 
-- (id)init {
+-(id)init {
     self = [super init];
     if(self) {
         
     }
     return self;
 }
-- (id)initWithCoder:(NSCoder*)decoder {
+-(id)initWithCoder:(NSCoder*)decoder {
     self = [super initWithCoder:decoder];
     if (self) {
         self.textColor = [UIColor clearColor];
@@ -114,7 +113,7 @@ static NSMutableDictionary* highlightThemes;
     }
     return self;
 }
-- (id)initWithFrame:(CGRect)frame {
+-(id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         self.textColor = [UIColor clearColor];
@@ -141,11 +140,12 @@ static NSMutableDictionary* highlightThemes;
     
     //Determine default text color
     UIColor* textColor = nil;
-    if(!self.highlightColor||!(textColor=[self.highlightColor objectForKey:kRegexHighlightViewTypeText]))
+    if(!self.highlightColor||!(textColor=[self.highlightColor objectForKey:kRegexHighlightViewTypeText])) {
         if([self.textColor isEqual:[UIColor clearColor]]) {
             if(!(textColor=[[RegexHighlightView highlightTheme:kRegexHighlightViewThemeDefault] objectForKey:kRegexHighlightViewTypeText]))
                textColor = [UIColor blackColor];
         } else textColor = self.textColor;
+    }
     
     //Set line height, font, color and break mode
     CGFloat minimumLineHeight = [self.text sizeWithFont:self.font].height,maximumLineHeight = minimumLineHeight;
@@ -174,7 +174,7 @@ static NSMutableDictionary* highlightThemes;
     CTFrameDraw(frame,context);
 }
 
-- (NSRange)visibleRangeOfTextView:(UITextView *)textView {
+-(NSRange)visibleRangeOfTextView:(UITextView *)textView {
     CGRect bounds = textView.bounds;
     //Get start and end bouns for text position
     UITextPosition *start = [textView characterRangeAtPoint:bounds.origin].start,*end = [textView characterRangeAtPoint:CGPointMake(CGRectGetMaxX(bounds),CGRectGetMaxY(bounds))].end;
@@ -182,7 +182,7 @@ static NSMutableDictionary* highlightThemes;
     return NSMakeRange([textView offsetFromPosition:textView.beginningOfDocument toPosition:start],[textView offsetFromPosition:start toPosition:end]);
 }
 
-- (NSAttributedString*)highlightText:(NSAttributedString*)attributedString {
+-(NSAttributedString*)highlightText:(NSAttributedString*)attributedString {
     //Create a mutable attribute string to set the highlighting
     NSString* string = attributedString.string; NSRange range = NSMakeRange(0,[string length]);
     NSMutableAttributedString* coloredString = [[NSMutableAttributedString alloc] initWithAttributedString:attributedString];
@@ -210,7 +210,7 @@ static NSMutableDictionary* highlightThemes;
     return coloredString.copy;
 }
 
-- (void) setHighlightTheme:(RegexHighlightViewTheme)theme {
+-(void)setHighlightTheme:(RegexHighlightViewTheme)theme {
     self.highlightColor = [RegexHighlightView highlightTheme:theme];
     
     //Set font, text color and background color back to default
@@ -222,7 +222,7 @@ static NSMutableDictionary* highlightThemes;
     self.font = [UIFont systemFontOfSize:(theme!=kRegexHighlightViewThemePresentation?14.0:18.0)];
 }
 
-+ (NSDictionary*)highlightTheme:(RegexHighlightViewTheme)theme {
++(NSDictionary*)highlightTheme:(RegexHighlightViewTheme)theme {
     //Check if the highlight theme has already been defined
     NSDictionary* themeColor = nil;
     if(!highlightThemes) highlightThemes = [NSMutableDictionary dictionary];
@@ -374,20 +374,20 @@ static NSMutableDictionary* highlightThemes;
     } else return nil;
 }
 
-+ (NSDictionary*)defaultDefinition {
++(NSDictionary*)defaultDefinition {
     //It is recommended to use an ordered dictionary, because the highlighting will take place in the same order the dictionary enumerator returns the definitions
-    OrderedDictionary* definition = [OrderedDictionary dictionary];
+    NSMutableDictionary* definition = [NSMutableDictionary dictionary];
     [definition setObject:@"(?<!\\w)(and|or|xor|for|do|while|foreach|as|return|die|exit|if|then|else|elseif|new|delete|try|throw|catch|finally|class|function|string|array|object|resource|var|bool|boolean|int|integer|float|double|real|string|array|global|const|static|public|private|protected|published|extends|switch|true|false|null|void|this|self|struct|char|signed|unsigned|short|long|print)(?!\\w)" forKey:kRegexHighlightViewTypeKeyword];
-    [definition setObject:@"((https?://)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-]*)*/?)" forKey:kRegexHighlightViewTypeURL];
-    [definition setObject:@"((NS|UI|CG)\\w+)" forKey:kRegexHighlightViewTypeProject];
-    [definition setObject:@"(\\.\\w+)" forKey:kRegexHighlightViewTypeAttribute];    
-    [definition setObject:@"(\\d)" forKey:kRegexHighlightViewTypeNumber];
+    [definition setObject:@"((https?|mailto|ftp|file)://([-\\w\\.]+)+(:\\d+)?(/([\\w/_\\.]*(\\?\\S+)?)?)?)" forKey:kRegexHighlightViewTypeURL];
+    [definition setObject:@"\\b((NS|UI|CG)\\w+?)" forKey:kRegexHighlightViewTypeProject];
+    [definition setObject:@"(\\.[^\\d]\\w+)" forKey:kRegexHighlightViewTypeAttribute];    
+    [definition setObject:@"(?<!\\w)(((0x[0-9a-fA-F]+)|(([0-9]+\\.?[0-9]*|\\.[0-9]+)([eE][-+]?[0-9]+)?))[fFlLuU]{0,2})(?!\\w)" forKey:kRegexHighlightViewTypeNumber];
     [definition setObject:@"('.')" forKey:kRegexHighlightViewTypeCharacter];
     [definition setObject:@"(@?\"(?:[^\"\\\\]|\\\\.)*\")" forKey:kRegexHighlightViewTypeString];
-    [definition setObject:@"(//.*?)\n" forKey:kRegexHighlightViewTypeComment];
+    [definition setObject:@"//[^\"\\n\\r]*(?:\"[^\"\\n\\r]*\"[^\"\\n\\r]*)*[\\r\\n]" forKey:kRegexHighlightViewTypeComment];
     [definition setObject:@"(/\\*|\\*/)" forKey:kRegexHighlightViewTypeDocumentationCommentKeyword];
     [definition setObject:@"/\\*(.*?)\\*/" forKey:kRegexHighlightViewTypeDocumentationComment];
-    [definition setObject:@"(#.*?)\n" forKey:kRegexHighlightViewTypePreprocessor];
+    [definition setObject:@"(#.*?)[\r\n]" forKey:kRegexHighlightViewTypePreprocessor];
     [definition setObject:@"(Kristian|Kraljic)" forKey:kRegexHighlightViewTypeOther];
     return definition;
 }
