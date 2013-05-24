@@ -162,11 +162,11 @@ static NSMutableDictionary* highlightThemes;
                 
     //Create path to work with a frame with applied margins
     CGMutablePathRef path = CGPathCreateMutable();
-    CGPathAddRect(path,NULL,CGRectMake(MARGIN+0.0,(-self.contentOffset.y+0),(size.width-2*MARGIN),(size.height+self.contentOffset.y-MARGIN)));
+    CGPathAddRect(path,NULL,CGRectMake(MARGIN+0.0,(-self.contentOffset.y+0),(size.width-2*MARGIN),(size.height+(self.contentOffset.y - (int)((self.contentOffset.y-MARGIN)/minimumLineHeight)*minimumLineHeight)-MARGIN)));
         
         
     //Create attributed string, with applied syntax highlighting
-    CFAttributedStringRef attributedString = (__bridge CFAttributedStringRef)[self highlightText:[[NSAttributedString alloc] initWithString:self.text attributes:attributes]];
+    CFAttributedStringRef attributedString = (__bridge CFAttributedStringRef)[self highlightText:[[NSAttributedString alloc] initWithString:[self.text substringWithRange:[self visibleRangeOfTextView:self]]attributes:attributes]];
     
     //Draw the frame
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)attributedString);
@@ -186,6 +186,10 @@ static NSMutableDictionary* highlightThemes;
     //Create a mutable attribute string to set the highlighting
     NSString* string = attributedString.string; NSRange range = NSMakeRange(0,[string length]);
     NSMutableAttributedString* coloredString = [[NSMutableAttributedString alloc] initWithAttributedString:attributedString];
+    
+    //Fix the offcenter of UITextView's and CoreText's text render by telling the CoreText to ignore the kerning
+    NSNumber *kern = [NSNumber numberWithFloat:0];
+    [coloredString addAttribute:(id)kCTKernAttributeName value:kern range:range];
     
     //Define the definition to use
     NSDictionary* definition = nil;
